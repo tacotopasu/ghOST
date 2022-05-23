@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52c7ad7b-d5c0-490b-8541-ad5a0f4052b6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ghost/KeyListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ghost/MouseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ghost/MouseListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ghost/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ghost/Window.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/Print.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/Print.java" afterDir="false" />
-    </list>
+    <list default="true" id="52c7ad7b-d5c0-490b-8541-ad5a0f4052b6" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,8 +60,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1653301532934</updated>
-      <workItem from="1653301533977" duration="5412000" />
+      <workItem from="1653301533977" duration="6240000" />
     </task>
+    <task id="LOCAL-00001" summary="Code Commit...">
+      <created>1653320431481</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1653320431481</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -77,5 +77,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Code Commit..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Code Commit..." />
   </component>
 </project>
