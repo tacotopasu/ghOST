@@ -4,6 +4,7 @@ import org.lwjgl.Version;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.opengl.GL;
 import util.Print;
+import util.Time;
 
 import static org.lwjgl.glfw.Callbacks.*;
 import static org.lwjgl.glfw.GLFW.*;
@@ -11,16 +12,37 @@ import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.system.MemoryUtil.NULL;
 
 public class Window {
+
     private int width, height;
+    public float r, g, b, a;
     private String title;
     private long glfwWindow;
-
     private static Window window = null;
+    public static Scene currentScene;
 
     private Window() {
         this.width = 800;
         this.height = 600;
         this.title = "gh//OST Engine";
+        r = 1;
+        g = 1;
+        b = 1;
+        a = 1;
+    }
+
+    public static void changeScene(int newScene){
+        switch(newScene){
+            case 0:
+                currentScene = new LevelEditorScene();
+                currentScene.init();
+                break;
+            case 1:
+                currentScene = new LevelScene();
+                currentScene.init();
+                break;
+            default:
+                assert false : "Unknown or Invalid Scene selected: '" + newScene + "'.";
+        }
     }
 
     public static Window get() {
@@ -72,25 +94,42 @@ public class Window {
         glfwSetCursorPosCallback(glfwWindow, MouseListener::mousePosCallback);
         glfwSetMouseButtonCallback(glfwWindow, MouseListener::mouseButtonCallback);
         glfwSetScrollCallback(glfwWindow, MouseListener::mouseScrollCallback);
+        glfwSetKeyCallback(glfwWindow, KeyListener::keyCallback);
 
         // Set current OpenGL context
         glfwMakeContextCurrent(glfwWindow);
         // Enable V-Sync
-        glfwSwapInterval(1);
+        //glfwSwapInterval(1);
         // Render Window
         glfwShowWindow(glfwWindow);
         // Create all external content capabilities
         GL.createCapabilities();
+        // Set Default Scene
+        Window.changeScene(0);
+
     }
 
     public void loop() {
+        float beginTime = Time.getTime();
+        float endTime;
+        float dt = -1.0f;
+
         while (!glfwWindowShouldClose(glfwWindow)) {
-            // Poll Events
+            // Poll events
             glfwPollEvents();
-            // Render Background Color
-            glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+
+            glClearColor(r, g, b, a);
             glClear(GL_COLOR_BUFFER_BIT);
+
+            if (dt >= 0) {
+                currentScene.update(dt);
+            }
+
             glfwSwapBuffers(glfwWindow);
+
+            endTime = Time.getTime();
+            dt = endTime - beginTime;
+            beginTime = endTime;
         }
     }
 }
