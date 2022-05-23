@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package ghost;
 
 import org.lwjgl.Version;
@@ -93,4 +94,7 @@ public class Window {
             glfwSwapBuffers(glfwWindow);
         }
     }
+=======
+package ghOST;public class Window {
+>>>>>>> 0f28ef12b2e143e9e70818efd202807609b88491
 }

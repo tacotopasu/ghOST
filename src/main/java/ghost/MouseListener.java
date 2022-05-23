@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package ghost;
 
 import static org.lwjgl.glfw.GLFW.*;
@@ -94,4 +95,7 @@ public class MouseListener {
         }
     }
 
+=======
+package ghost;public class MouseListener {
+>>>>>>> 0f28ef12b2e143e9e70818efd202807609b88491
 }
