@@ -4,16 +4,13 @@ plugins {
 
 group 'Pan0rama'
 version '1.0-SNAPSHOT'
-<<<<<<< HEAD
 sourceCompatibility = 1.11
-=======
->>>>>>> 0f28ef12b2e143e9e70818efd202807609b88491
+
 
 repositories {
     mavenCentral()
 }
 
-<<<<<<< HEAD
 test {
     useJUnitPlatform()
 }
@@ -41,7 +38,7 @@ dependencies {
     runtimeOnly "org.lwjgl:lwjgl-opengl::$lwjglNatives"
     runtimeOnly "org.lwjgl:lwjgl-stb::$lwjglNatives"
     implementation "org.joml:joml:${jomlVersion}"
-=======
+}
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
@@ -49,5 +46,4 @@ dependencies {
 
 test {
     useJUnitPlatform()
->>>>>>> 0f28ef12b2e143e9e70818efd202807609b88491
 }

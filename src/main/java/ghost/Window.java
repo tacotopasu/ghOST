@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package ghost;
 
 import org.lwjgl.Version;
@@ -18,20 +17,20 @@ public class Window {
 
     private static Window window = null;
 
-    private Window(){
+    private Window() {
         this.width = 800;
         this.height = 600;
         this.title = "gh//OST Engine";
     }
 
-    public static Window get(){
-        if (Window.window == null){
+    public static Window get() {
+        if (Window.window == null) {
             Window.window = new Window();
         }
         return Window.window;
     }
 
-    public void run(){
+    public void run() {
         System.out.println("\n\ngh//OST Engine Runtime //");
         Print.print("Currently using LWJGl " + Version.getVersion() + ".");
         init();
@@ -53,7 +52,7 @@ public class Window {
         // Initialize GLFW
         if (!glfwInit()) {
             throw new IllegalStateException("Unable to initialize GLFW.");
-        } else{
+        } else {
             Print.print("Successfully initialized GLFW.");
         }
         // Setup GLFW
@@ -84,8 +83,8 @@ public class Window {
         GL.createCapabilities();
     }
 
-    public void loop(){
-        while(!glfwWindowShouldClose(glfwWindow)){
+    public void loop() {
+        while (!glfwWindowShouldClose(glfwWindow)) {
             // Poll Events
             glfwPollEvents();
             // Render Background Color
@@ -94,7 +93,4 @@ public class Window {
             glfwSwapBuffers(glfwWindow);
         }
     }
-=======
-package ghOST;public class Window {
->>>>>>> 0f28ef12b2e143e9e70818efd202807609b88491
 }
