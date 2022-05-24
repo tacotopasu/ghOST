@@ -5,18 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1206458-044a-4bba-ad8e-d45547975771" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/shaders/default.glsl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ghost/LevelEditorScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ghost/LevelScene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ghost/Scene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/renderer/Shader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/Time.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ghost/Camera.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ghost/KeyListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ghost/KeyListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/shaders/default.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/assets/shaders/default.glsl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ghost/LevelEditorScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ghost/LevelEditorScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ghost/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ghost/Scene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ghost/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ghost/Window.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/Print.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/Print.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/renderer/Shader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/renderer/Shader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,15 +54,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Azza/Downloads/JetBrains-Discord-Integration-1.9.0.zip&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;discord-application&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Azza/Downloads/JetBrains-Discord-Integration-1.9.0.zip",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -94,12 +89,24 @@
       <workItem from="1653337630694" duration="4000" />
       <workItem from="1653337652771" duration="284000" />
       <workItem from="1653337954431" duration="25000" />
-      <workItem from="1653341350803" duration="2667000" />
+      <workItem from="1653341350803" duration="10208000" />
     </task>
+    <task id="LOCAL-00001" summary="// Added Shader Rendering&#10;// Added Input Listeners&#10;// Added Scenes and Scene Manager&#10;// Improved Window Rendering">
+      <created>1653344834520</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1653344834520</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="// Added Shader Rendering&#10;// Added Input Listeners&#10;// Added Scenes and Scene Manager&#10;// Improved Window Rendering" />
+    <option name="LAST_COMMIT_MESSAGE" value="// Added Shader Rendering&#10;// Added Input Listeners&#10;// Added Scenes and Scene Manager&#10;// Improved Window Rendering" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

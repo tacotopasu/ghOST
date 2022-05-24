@@ -1,6 +1,10 @@
 package renderer;
 
+import org.joml.Matrix4f;
+import org.lwjgl.BufferUtils;
+
 import java.io.IOException;
+import java.nio.FloatBuffer;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -37,7 +41,7 @@ public class Shader {
             } else if (firstPattern.equals("fragment")) {
                 fragmentSource = splitString[1];
             } else {
-                throw new IOException("Unexpected token '" + firstPattern + "'");
+                throw new IOException("Unexpected token: " + firstPattern);
             }
 
             if (secondPattern.equals("vertex")) {
@@ -45,27 +49,25 @@ public class Shader {
             } else if (secondPattern.equals("fragment")) {
                 fragmentSource = splitString[2];
             } else {
-                throw new IOException("Unexpected token '" + secondPattern + "'");
+                throw new IOException("Unexpected token: " + secondPattern);
             }
         } catch(IOException e) {
             e.printStackTrace();
-            assert false : "Error: Could not open file for shader: '" + filepath + "'";
+            assert false : "Error: Could not open file for shader '" + filepath + "'.";
         }
     }
 
     public void compile() {
-        // ============================================================
         // Compile and link shaders
-        // ============================================================
         int vertexID, fragmentID;
 
-        // First load and compile the vertex shader
+        // Load and compile the vertex shader
         vertexID = glCreateShader(GL_VERTEX_SHADER);
         // Pass the shader source to the GPU
         glShaderSource(vertexID, vertexSource);
         glCompileShader(vertexID);
 
-        // Check for errors in compilation
+        // Look for any errors in compilation
         int success = glGetShaderi(vertexID, GL_COMPILE_STATUS);
         if (success == GL_FALSE) {
             int len = glGetShaderi(vertexID, GL_INFO_LOG_LENGTH);
@@ -74,13 +76,13 @@ public class Shader {
             assert false : "";
         }
 
-        // First load and compile the vertex shader
+        // Load and compile the vertex shader
         fragmentID = glCreateShader(GL_FRAGMENT_SHADER);
         // Pass the shader source to the GPU
         glShaderSource(fragmentID, fragmentSource);
         glCompileShader(fragmentID);
 
-        // Check for errors in compilation
+        // Look for any errors in compilation
         success = glGetShaderi(fragmentID, GL_COMPILE_STATUS);
         if (success == GL_FALSE) {
             int len = glGetShaderi(fragmentID, GL_INFO_LOG_LENGTH);
@@ -89,13 +91,13 @@ public class Shader {
             assert false : "";
         }
 
-        // Link shaders and check for errors
+        // Link shaders and look for errors
         shaderProgramID = glCreateProgram();
         glAttachShader(shaderProgramID, vertexID);
         glAttachShader(shaderProgramID, fragmentID);
         glLinkProgram(shaderProgramID);
 
-        // Check for linking errors
+        // Look for linking errors
         success = glGetProgrami(shaderProgramID, GL_LINK_STATUS);
         if (success == GL_FALSE) {
             int len = glGetProgrami(shaderProgramID, GL_INFO_LOG_LENGTH);
@@ -106,11 +108,19 @@ public class Shader {
     }
 
     public void use() {
-        // Bind shader program
+        // Call the shader program
         glUseProgram(shaderProgramID);
     }
 
     public void detach() {
         glUseProgram(0);
     }
-}
+
+    public void uploadMat4f(String varName, Matrix4f mat4) {
+        int varLocation = glGetUniformLocation(shaderProgramID, varName);
+        FloatBuffer matBuffer = BufferUtils.createFloatBuffer(16);
+        mat4.get(matBuffer);
+        glUniformMatrix4fv(varLocation, false, matBuffer);
+
+    }
+ }
