@@ -6,7 +6,7 @@ import org.lwjgl.opengl.GL;
 import util.Print;
 import util.Time;
 
-import static org.lwjgl.glfw.Callbacks.*;
+import static org.lwjgl.glfw.Callbacks.glfwFreeCallbacks;
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.system.MemoryUtil.NULL;
@@ -21,8 +21,8 @@ public class Window {
     public static Scene currentScene;
 
     private Window() {
-        this.width = 800;
-        this.height = 600;
+        this.width = 1920;
+        this.height = 1080;
         this.title = "gh//OST Engine";
         r = 1;
         g = 1;
@@ -35,10 +35,12 @@ public class Window {
             case 0:
                 currentScene = new LevelEditorScene();
                 currentScene.init();
+                currentScene.start();
                 break;
             case 1:
                 currentScene = new LevelScene();
                 currentScene.init();
+                currentScene.start();
                 break;
             default:
                 assert false : "Unknown or Invalid Scene selected: '" + newScene + "'.";
@@ -50,6 +52,10 @@ public class Window {
             Window.window = new Window();
         }
         return Window.window;
+    }
+
+    public static Scene getScene(){
+        return get().currentScene;
     }
 
     public void run() {

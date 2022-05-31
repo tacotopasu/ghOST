@@ -14,8 +14,8 @@ void main()
     gl_Position = uProjection * uView * vec4(aPos, 1.0);
 }
 
-    #type fragment
-    #version 330 core
+#type fragment
+#version 330 core
 
 in vec4 fColor;
 
@@ -23,5 +23,8 @@ out vec4 color;
 
 void main()
 {
+    // float avg = (fColor.r + fColor.g + fColor.b) / 3; // B&W
+    // float noise = fract(sin(dot(fColor.xy, vec2(12.9898,78.233))) * 43758.5453); // Apply noise to the texture
     color = fColor;
 }
+
